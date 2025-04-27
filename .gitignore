@@ -1,0 +1,11 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore specific Python file
+mapbuild-simple2cornerterrain.py
+
+# Ignore all files in assets directory
+assets/*
+
+# But keep transition tileset files
+!assets/transition_*_*.png 
