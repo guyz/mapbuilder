@@ -8,4 +8,6 @@ mapbuild-simple2cornerterrain.py
 assets/*
 
 # But keep transition tileset files
-!assets/transition_*_*.png 
+!assets/transition_*_*.png
+# And keep atlas files
+!assets/atlas.* 
