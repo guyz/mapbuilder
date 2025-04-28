@@ -76,3 +76,32 @@ To add transitions between new biome types:
 1. Create a new tileset image following the format above
 2. Name it according to the convention: `transition_biome1_biome2.png`
 3. Update the code to use the new tileset for the appropriate regions 
+
+## Building Assets
+
+### Building the Object Atlas
+
+The object atlas is a single image containing all tiles for in-game objects (e.g., trees, rocks, chests, etc).
+**TODO:** In the future, merge all other asset files into this single atlas for easier management.
+
+#### How to Build/Extend the Atlas
+
+1. **Draw all object art in a single 32x32 tilemap using Tiled map editor.**  
+   - Place each object in its own 32x32 cell.
+   - Save your map as `atlas.tmx` for future editing/reference.
+
+2. **Export the result as `atlas.png` and put it in `assets/`.**  
+   - This PNG is the pixel source file used by the game.
+
+3. **In Tiled, create a new Tileset:**  
+   - Go to `New -> New Tileset`.
+   - Import `atlas.png` as the image source.
+
+4. **Add any metadata logic you want to the different tiles and export as a `.tsj` file:**  
+   - You can add custom properties, collision info, or tags to each tile.
+   - Export the tileset as `atlas.tsj` (Tiled's JSON format).
+
+5. **Map builder code then loads `atlas.png` and `atlas.tsj` and uses that.**  
+   - The code can read the atlas image and metadata to place and interpret objects in the world.
+
+This workflow makes it easy to add, update, or extend in-game objects and their properties in a single place. 
